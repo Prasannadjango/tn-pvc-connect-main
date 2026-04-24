@@ -10,6 +10,7 @@ type Action = {
   label: string;
   to: string;
   secondary?: boolean;
+  icon?: React.ComponentType<{ className?: string }>;
 };
 
 export type BentoItem = {
@@ -72,26 +73,31 @@ export const PageHero = ({
           {/* CTAs */}
           {actions.length > 0 && (
             <div className="animate-reveal delay-3 mt-10 flex flex-wrap justify-center gap-4">
-              {actions.map((action) =>
-                action.secondary ? (
+              {actions.map((action) => {
+                const Icon = action.icon;
+                return action.secondary ? (
                   <Button
                     asChild
                     key={action.to}
                     variant="outline"
-                    className="secondary-btn h-14 px-10 text-base"
+                    className="secondary-btn h-14 px-10 text-base group"
                   >
-                    <Link to={action.to}>{action.label}</Link>
+                    <Link to={action.to}>
+                      {action.label}
+                      {Icon && <Icon className="ml-2 size-4 transition-transform group-hover:translate-x-1" />}
+                    </Link>
                   </Button>
                 ) : (
                   <Link
                     key={action.to}
                     to={action.to}
-                    className="primary-btn h-14 px-10 text-base"
+                    className="primary-btn h-14 px-10 text-base group"
                   >
                     {action.label}
+                    {Icon && <Icon className="ml-2 size-4 transition-transform group-hover:translate-x-1" />}
                   </Link>
-                ),
-              )}
+                );
+              })}
             </div>
           )}
 
@@ -176,27 +182,31 @@ export const PageHero = ({
 
           {actions.length > 0 ? (
             <div className="animate-reveal delay-3 flex flex-wrap gap-4">
-              {actions.map((action) =>
-                action.secondary ? (
+              {actions.map((action) => {
+                const Icon = action.icon;
+                return action.secondary ? (
                   <Button
                     asChild
                     key={action.to}
                     variant="outline"
-                    className="secondary-btn h-12 px-8"
+                    className="secondary-btn h-12 px-8 group"
                   >
-                    <Link to={action.to}>{action.label}</Link>
+                    <Link to={action.to}>
+                      {action.label}
+                      {Icon && <Icon className="ml-2 size-4 transition-transform group-hover:translate-x-1" />}
+                    </Link>
                   </Button>
                 ) : (
                   <Link
                     key={action.to}
                     to={action.to}
-                    className="primary-btn h-12 px-8"
+                    className="primary-btn h-12 px-8 group"
                   >
                     {action.label}
-                    <ArrowRight className="ml-2 size-4" aria-hidden="true" />
+                    {Icon && <Icon className="size-4 transition-transform group-hover:translate-x-1 ml-2" />}
                   </Link>
-                ),
-              )}
+                );
+              })}
             </div>
           ) : null}
         </div>

@@ -75,16 +75,18 @@ export const SiteLayout = ({ children }: SiteLayoutProps) => {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden items-center gap-2 lg:flex" aria-label="Main navigation">
+          <nav className="hidden items-center gap-1 lg:flex" aria-label="Main navigation">
             {navItems.slice(0, 7).map((item) => (
               <NavLink
                 key={item.path}
                 to={item.path}
-                className="relative rounded-full px-4 py-2 text-[13px] font-bold text-muted-foreground transition-all hover:bg-surface hover:text-foreground"
-                activeClassName="bg-primary/10 text-primary hover:bg-primary/15"
+                className="group relative rounded-full px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-muted-foreground transition-all hover:text-primary"
+                activeClassName="text-primary bg-primary/5"
                 end={item.path === "/"}
               >
-                {item.shortLabel ?? item.label}
+                <span className="relative z-10">{item.shortLabel ?? item.label}</span>
+                {/* Subtle indicator for active state */}
+                <span className="absolute bottom-1.5 left-1/2 h-0.5 w-0 -translate-x-1/2 rounded-full bg-primary transition-all duration-300 group-[.active]:w-4" />
               </NavLink>
             ))}
           </nav>

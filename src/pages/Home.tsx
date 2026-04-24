@@ -68,8 +68,8 @@ const Home = () => {
           }
         ]}
         actions={[
-          { label: "Get Started", to: "/network" },
-          { label: "Learn More", to: "/benefits", secondary: true },
+          { label: "Learn More", to: "/benefits", secondary: true, icon: ChevronRight },
+          { label: "Get Started", to: "/network", icon: ArrowRight },
         ]}
       />
 
@@ -405,8 +405,14 @@ const Home = () => {
             align="center"
           />
           <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/benefits" className="primary-btn h-14 px-10">Get Started Today</Link>
-            <a href="tel:+918870826404" className="secondary-btn h-14 px-10">Contact Support</a>
+            <Link to="/benefits" className="primary-btn h-14 px-10 group">
+              Get Started Today
+              <ArrowRight className="ml-2 size-5 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <a href="tel:+918870826404" className="secondary-btn h-14 px-10 group">
+              Contact Support
+              <PhoneCall className="ml-2 size-5 transition-transform group-hover:scale-110" />
+            </a>
           </div>
         </div>
       </section>
