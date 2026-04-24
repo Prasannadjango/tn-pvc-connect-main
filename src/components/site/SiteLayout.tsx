@@ -22,7 +22,7 @@ type SiteLayoutProps = {
 };
 
 const SocialFloat = () => (
-  <div className="fixed left-6 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-5 lg:flex animate-float">
+  <div className="fixed left-3 md:left-6 top-1/2 z-40 -translate-y-1/2 flex flex-col gap-3 md:gap-5 animate-float">
     {[
       { icon: Instagram, href: "https://instagram.com", label: "Instagram", bg: "bg-pink-600", delay: "delay-1" },
       { icon: Youtube, href: "https://youtube.com", label: "YouTube", bg: "bg-red-600", delay: "delay-2" },
@@ -35,21 +35,21 @@ const SocialFloat = () => (
         target="_blank"
         rel="noreferrer"
         className={cn(
-          "group relative flex size-12 items-center justify-center rounded-2xl text-white shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-110 hover:shadow-primary/40 animate-reveal",
+          "group relative flex size-10 md:size-12 items-center justify-center rounded-xl md:rounded-2xl text-white shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-110 hover:shadow-primary/40 animate-reveal",
           item.bg,
           item.delay
         )}
       >
-        <item.icon className="size-5 transition-transform duration-700 group-hover:rotate-[360deg] relative z-10" />
+        <item.icon className="size-4 md:size-5 transition-transform duration-700 group-hover:rotate-[360deg] relative z-10" />
 
         {/* Attraction: Persistent Pulse Glow */}
         <span className={cn(
-          "absolute inset-0 -z-10 rounded-2xl animate-soft-glow opacity-50",
+          "absolute inset-0 -z-10 rounded-xl md:rounded-2xl animate-soft-glow opacity-50",
           item.bg
         )} />
 
         {/* Hover Attraction Ping */}
-        <span className="absolute inset-0 -z-10 rounded-2xl bg-white/40 opacity-0 transition-opacity group-hover:animate-ping group-hover:opacity-100" />
+        <span className="absolute inset-0 -z-10 rounded-xl md:rounded-2xl bg-white/40 opacity-0 transition-opacity group-hover:animate-ping group-hover:opacity-100" />
 
         {/* Tooltip */}
         <span className="absolute left-full ml-4 rounded-lg bg-foreground px-2 py-1 text-[10px] font-black tracking-wide text-background opacity-0 transition-all group-hover:ml-6 group-hover:opacity-100">
