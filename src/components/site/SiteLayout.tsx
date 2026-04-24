@@ -41,7 +41,7 @@ const SocialFloat = () => (
         )}
       >
         <item.icon className="size-5 transition-transform duration-700 group-hover:rotate-[360deg] relative z-10" />
-        
+
         {/* Attraction: Persistent Pulse Glow */}
         <span className={cn(
           "absolute inset-0 -z-10 rounded-2xl animate-soft-glow opacity-50",
@@ -50,7 +50,7 @@ const SocialFloat = () => (
 
         {/* Hover Attraction Ping */}
         <span className="absolute inset-0 -z-10 rounded-2xl bg-white/40 opacity-0 transition-opacity group-hover:animate-ping group-hover:opacity-100" />
-        
+
         {/* Tooltip */}
         <span className="absolute left-full ml-4 rounded-lg bg-foreground px-2 py-1 text-[10px] font-black tracking-wide text-background opacity-0 transition-all group-hover:ml-6 group-hover:opacity-100">
           {item.label}
@@ -79,16 +79,16 @@ export const SiteLayout = ({ children }: SiteLayoutProps) => {
         className={cn(
           "fixed top-0 left-0 w-full z-50 h-20 transition-all duration-500",
           scrolled
-            ? "py-3 px-4"
-            : "py-4",
+            ? "p-4 "
+            : "p-4",
         )}
       >
         <div
           className={cn(
-            "container flex items-center justify-between transition-all duration-500 rounded-2xl border border-transparent py-4 px-4 sm:px-6",
+            "container flex items-center justify-between transition-all duration-500 rounded-2xl border border-transparent p-4",
             scrolled
-              ? "bg-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.08)] backdrop-blur-xl border-border/50"
-              : "bg-transparent"
+              ? "bg-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.08)] backdrop-blur-xl border-border/50 py-3 px-3"
+              : "bg-transparent py-0 px-0"
           )}
         >
           {/* Logo */}
