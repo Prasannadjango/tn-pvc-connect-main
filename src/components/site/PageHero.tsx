@@ -29,6 +29,7 @@ type PageHeroProps = {
   centered?: boolean;
   image?: string;
   bentoItems?: BentoItem[]; // New prop for bento gallery
+  titleClassName?: string;
 };
 
 export const PageHero = ({ 
@@ -40,7 +41,8 @@ export const PageHero = ({
   compact = false,
   centered = false,
   image,
-  bentoItems
+  bentoItems,
+  titleClassName
 }: PageHeroProps) => {
   if (centered) {
     return (
@@ -56,7 +58,10 @@ export const PageHero = ({
 
           {/* Headline */}
           <div className="max-w-4xl space-y-6">
-            <h1 className="animate-reveal delay-1 text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-7xl">
+            <h1 className={cn(
+              "animate-reveal delay-1 text-4xl font-black leading-[1.1] tracking-tight sm:text-5xl lg:text-7xl lg:leading-[1.2]",
+              titleClassName
+            )}>
               {title}
             </h1>
             <p className="animate-reveal delay-2 mx-auto max-w-2xl text-base font-medium leading-relaxed text-muted-foreground sm:text-lg">
@@ -158,7 +163,10 @@ export const PageHero = ({
           </div>
 
           <div className="space-y-6">
-            <h1 className="animate-reveal delay-1">
+            <h1 className={cn(
+              "animate-reveal delay-1 text-4xl font-black leading-[1.1] tracking-tight sm:text-5xl lg:text-6xl lg:leading-[1.2]",
+              titleClassName
+            )}>
               {title}
             </h1>
             <p className="animate-reveal delay-2 max-w-2xl text-base font-medium leading-relaxed text-muted-foreground sm:text-lg">

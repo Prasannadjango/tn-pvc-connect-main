@@ -34,9 +34,10 @@ const Home = () => {
       <PageHero
         centered
         eyebrow="The future of PVC interiors is here"
+        titleClassName="lg:leading-[1.4]"
         title={
           <>
-            A stronger digital network for <span className="text-primary">PVC interiors</span> across Tamil Nadu.
+            A Stronger Digital Network for <span className="text-primary">PVC Interiors</span> Across Tamil Nadu.
           </>
         }
         description="Leverage a connected digital ecosystem and community-first coordination to streamline your projects, reduce delays, and drive consistent growth across Tamil Nadu."
