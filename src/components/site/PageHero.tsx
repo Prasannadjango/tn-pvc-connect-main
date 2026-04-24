@@ -51,7 +51,7 @@ export const PageHero = ({
         <div className="container relative z-10 flex flex-col items-center text-center">
           {/* Eyebrow / Badge */}
           <div className="animate-reveal mb-8">
-            <Link to="/benefits" className="group inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/50 px-5 py-2 text-[10px] font-black uppercase tracking-[0.2em] text-foreground backdrop-blur-md transition-all hover:border-primary/40 hover:bg-white">
+            <Link to="/benefits" className="group inline-flex items-center gap-2 rounded-full border border-border/60 bg-white/50 px-5 py-2 text-[10px] font-black tracking-wide text-foreground backdrop-blur-md transition-all hover:border-primary/40 hover:bg-white">
               {eyebrow}
               <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
             </Link>
@@ -229,7 +229,7 @@ type SectionIntroProps = {
 export const SectionIntro = ({ eyebrow, title, description, align = "left" }: SectionIntroProps) => {
   return (
     <div className={cn("space-y-4", align === "center" && "mx-auto max-w-3xl text-center")}>
-      <p className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">{eyebrow}</p>
+      <p className="text-[10px] font-black tracking-wide text-primary">{eyebrow}</p>
       <h2 className="text-3xl font-black leading-[1.1] tracking-tight sm:text-4xl">{title}</h2>
       <p className="max-w-2xl text-base font-medium leading-relaxed text-muted-foreground">{description}</p>
     </div>

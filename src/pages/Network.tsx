@@ -24,7 +24,7 @@ const Network = () => {
         ]}
         aside={
           <div className="float-card">
-            <p className="text-[10px] font-black uppercase tracking-widest text-primary">Coverage</p>
+            <p className="text-[10px] font-black tracking-wide text-primary">Coverage</p>
             <div className="mt-6 flex flex-wrap gap-2">
               {geoCoverage.map((place) => (
                 <span key={place} className="inline-flex rounded-lg bg-surface px-3 py-1.5 text-[11px] font-bold text-muted-foreground border border-border/40">{place}</span>
@@ -64,7 +64,7 @@ const Network = () => {
       <section className="section-padding border-y border-border/40 bg-surface/50">
         <div className="container grid gap-12 lg:grid-cols-2">
           <div className="float-card">
-            <p className="text-[10px] font-black uppercase tracking-widest text-primary">Clarity</p>
+            <p className="text-[10px] font-black tracking-wide text-primary">Clarity</p>
             <h2 className="mt-4 text-2xl font-black tracking-tight">Why the network structure matters.</h2>
             <div className="mt-8 space-y-4">
               {[
@@ -81,7 +81,7 @@ const Network = () => {
           </div>
           <div className="float-card flex flex-col justify-between">
             <div>
-              <p className="text-[10px] font-black uppercase tracking-widest text-primary">Reach</p>
+              <p className="text-[10px] font-black tracking-wide text-primary">Reach</p>
               <h2 className="mt-4 text-2xl font-black tracking-tight">A WhatsApp-first hub designed for action.</h2>
               <p className="mt-6 text-sm font-medium leading-relaxed text-muted-foreground">
                 The network is shaped around tools people already use. WhatsApp helps groups coordinate quickly, while the website adds credibility and structured information for discovery.

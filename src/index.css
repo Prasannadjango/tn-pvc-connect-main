@@ -150,7 +150,7 @@
 
   /* ─── SaaS Eyebrow ─── */
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-primary;
+    @apply inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-xs font-bold tracking-normal text-primary;
   }
 
   /* ─── Step Flow (8pt alignment) ─── */
@@ -184,6 +184,25 @@
   .delay-1 { animation-delay: 0.1s; }
   .delay-2 { animation-delay: 0.2s; }
   .delay-3 { animation-delay: 0.3s; }
+  .delay-4 { animation-delay: 0.4s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  @keyframes soft-glow {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.2); }
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-soft-glow {
+    animation: soft-glow 2s ease-in-out infinite;
+  }
 }
 
 /* ─── Custom Scrollbar ─── */

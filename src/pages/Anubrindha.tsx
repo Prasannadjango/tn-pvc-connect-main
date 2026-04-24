@@ -27,7 +27,7 @@ const Anubrindha = () => {
       <section className="section-padding">
         <div className="container grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="float-card space-y-8">
-            <p className="text-[10px] font-black uppercase tracking-widest text-primary">Operations profile</p>
+            <p className="text-[10px] font-black tracking-wide text-primary">Operations profile</p>
             <h2 className="text-2xl font-black tracking-tight">{founder.role}</h2>
             <div className="space-y-4">
               {founder.highlights.map((highlight) => (

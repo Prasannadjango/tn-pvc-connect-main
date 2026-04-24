@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
-
-import { ArrowUpRight, Menu, Phone } from "lucide-react";
+import { ArrowUpRight, Facebook, Instagram, Menu, Phone, Twitter, Youtube } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 
@@ -21,6 +20,46 @@ import { cn } from "@/lib/utils";
 type SiteLayoutProps = {
   children: ReactNode;
 };
+
+const SocialFloat = () => (
+  <div className="fixed left-6 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-5 lg:flex animate-float">
+    {[
+      { icon: Instagram, href: "https://instagram.com", label: "Instagram", bg: "bg-pink-600", delay: "delay-1" },
+      { icon: Youtube, href: "https://youtube.com", label: "YouTube", bg: "bg-red-600", delay: "delay-2" },
+      { icon: Facebook, href: "https://facebook.com", label: "Facebook", bg: "bg-blue-700", delay: "delay-3" },
+      { icon: Twitter, href: "https://twitter.com", label: "Twitter", bg: "bg-sky-500", delay: "delay-4" },
+    ].map((item, i) => (
+      <a
+        key={item.label}
+        href={item.href}
+        target="_blank"
+        rel="noreferrer"
+        className={cn(
+          "group relative flex size-12 items-center justify-center rounded-2xl text-white shadow-2xl transition-all duration-500 hover:-translate-y-1 hover:scale-110 hover:shadow-primary/40 animate-reveal",
+          item.bg,
+          item.delay
+        )}
+      >
+        <item.icon className="size-5 transition-transform duration-700 group-hover:rotate-[360deg] relative z-10" />
+        
+        {/* Attraction: Persistent Pulse Glow */}
+        <span className={cn(
+          "absolute inset-0 -z-10 rounded-2xl animate-soft-glow opacity-50",
+          item.bg
+        )} />
+
+        {/* Hover Attraction Ping */}
+        <span className="absolute inset-0 -z-10 rounded-2xl bg-white/40 opacity-0 transition-opacity group-hover:animate-ping group-hover:opacity-100" />
+        
+        {/* Tooltip */}
+        <span className="absolute left-full ml-4 rounded-lg bg-foreground px-2 py-1 text-[10px] font-black tracking-wide text-background opacity-0 transition-all group-hover:ml-6 group-hover:opacity-100">
+          {item.label}
+        </span>
+      </a>
+    ))}
+    <div className="mx-auto h-20 w-px bg-gradient-to-b from-border to-transparent mt-2" />
+  </div>
+);
 
 export const SiteLayout = ({ children }: SiteLayoutProps) => {
   const [open, setOpen] = useState(false);
@@ -68,7 +107,7 @@ export const SiteLayout = ({ children }: SiteLayoutProps) => {
               <p className="text-base font-black tracking-tight text-foreground">
                 TN-PVC
               </p>
-              <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+              <p className="text-[10px] font-bold tracking-wide text-muted-foreground">
                 Interiors
               </p>
             </div>
@@ -80,7 +119,7 @@ export const SiteLayout = ({ children }: SiteLayoutProps) => {
               <NavLink
                 key={item.path}
                 to={item.path}
-                className="group relative rounded-full px-4 py-2 text-[11px] font-black uppercase tracking-[0.2em] text-muted-foreground transition-all hover:text-primary"
+                className="group relative rounded-full px-4 py-2 text-[11px] font-black tracking-wide text-muted-foreground transition-all hover:text-primary"
                 activeClassName="text-primary bg-primary/5"
                 end={item.path === "/"}
               >
@@ -142,7 +181,7 @@ export const SiteLayout = ({ children }: SiteLayoutProps) => {
                 <div className="space-y-6 border-t border-border/20 pt-8">
                   <div className="flex items-center gap-4">
                     <img src={brandAssets.aiPvcLogo} alt="" className="size-12 rounded-xl" />
-                    <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+                    <p className="text-[10px] font-bold tracking-wide text-muted-foreground">
                       Powered by AI-PVC Groups
                     </p>
                   </div>
@@ -161,6 +200,7 @@ export const SiteLayout = ({ children }: SiteLayoutProps) => {
       </header>
 
       {/* ─── Main ─── */}
+      <SocialFloat />
       <main id="main-content" className="relative pt-20">
         {children}
       </main>
@@ -212,7 +252,7 @@ export const SiteLayout = ({ children }: SiteLayoutProps) => {
           {/* Links grid */}
           <div className="grid gap-12 sm:grid-cols-2">
             <div className="space-y-6">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-primary">Contact support</p>
+              <p className="text-[10px] font-bold tracking-wide text-primary">Contact support</p>
               <div className="space-y-3">
                 <a className="block text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground" href="tel:+918870826404">
                   Srinivasan · +91 8870826404
@@ -226,7 +266,7 @@ export const SiteLayout = ({ children }: SiteLayoutProps) => {
               </div>
             </div>
             <div className="space-y-6">
-              <p className="text-[10px] font-bold uppercase tracking-widest text-primary">Quick links</p>
+              <p className="text-[10px] font-bold tracking-wide text-primary">Quick links</p>
               <nav className="space-y-3 flex flex-col" aria-label="Footer links">
                 <Link className="text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground" to="/network">Our network</Link>
                 <Link className="text-sm font-semibold text-muted-foreground transition-colors hover:text-foreground" to="/benefits">Business benefits</Link>

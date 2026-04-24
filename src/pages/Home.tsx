@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { Seo } from "@/components/seo/Seo";
 import { PageHero, SectionIntro } from "@/components/site/PageHero";
+import TNMap from "@/components/site/TNMap";
 import { SiteLayout } from "@/components/site/SiteLayout";
 import { Button } from "@/components/ui/button";
 import {
@@ -85,7 +86,7 @@ const Home = () => {
               <div key={stat.label} className="float-card group relative overflow-hidden flex flex-col items-center justify-center text-center py-10">
                 <div className={cn("absolute top-0 left-0 h-1.5 w-full", stat.accent)} />
                 <p className="text-4xl font-black tracking-tight text-foreground">{stat.value}</p>
-                <p className="mt-2 text-sm font-bold text-muted-foreground uppercase tracking-widest">{stat.label}</p>
+                <p className="mt-2 text-sm font-bold text-muted-foreground tracking-wide">{stat.label}</p>
                 {/* Subtle grid pattern background */}
                 <div className="absolute inset-0 -z-10 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(circle, #000 1px, transparent 1px)", backgroundSize: "20px 20px" }} />
               </div>
@@ -127,7 +128,7 @@ const Home = () => {
         <div className="container space-y-16 lg:space-y-24">
           <div className="mx-auto max-w-4xl text-center">
             <SectionIntro
-              eyebrow="DIGITAL IDENTITY"
+              eyebrow="Digital identity"
               title="Your entire PVC business, visualized in one place."
               description="We are building the digital infrastructure for the PVC trade. Every contractor, manufacturer, and worker becomes part of a searchable, trusted network."
               align="center"
@@ -147,7 +148,7 @@ const Home = () => {
               <div className="absolute inset-0 z-20 flex flex-col justify-end p-8">
                 <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-primary/20 px-4 py-1.5 backdrop-blur-md self-start">
                   <UserCheck className="size-4 text-primary" />
-                  <span className="text-xs font-bold uppercase tracking-widest text-white">Verified Identity</span>
+                  <span className="text-xs font-bold tracking-wide text-white">Verified identity</span>
                 </div>
                 <h3 className="text-2xl font-black text-white sm:text-3xl">Professional ecosystem</h3>
                 <p className="mt-2 max-w-md text-sm font-medium text-white/70">A professional profile for every member, showcasing skills, location, and project history across Tamil Nadu.</p>
@@ -249,44 +250,19 @@ const Home = () => {
             
             {/* Stylized Map Visual */}
             <div className="relative group overflow-hidden md:overflow-visible">
-              <div className="float-card aspect-square flex items-center justify-center bg-mesh overflow-hidden p-0 border-none shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent z-10" />
-                {/* Accurate Tamil Nadu SVG Path (Approximate) */}
-                <svg 
-                  className="w-[75%] h-[85%] fill-primary/10 stroke-primary/30 stroke-[1.5]" 
-                  viewBox="0 0 100 130"
-                  aria-hidden="true"
-                >
-                  <path d="
-                    M 85,15 
-                    C 88,10 93,5 95,10 
-                    L 96,15 L 94,30 L 88,35 L 85,45 L 82,60 L 84,70 L 80,85 L 75,90 L 70,95 L 60,105 L 55,115 L 45,125 
-                    C 40,128 35,128 30,125 
-                    L 28,115 L 32,105 L 30,95 L 25,90 L 22,80 L 18,70 L 10,65 L 5,55 L 8,45 L 15,40 L 20,38 L 30,35 L 35,28 L 40,20 L 55,15 L 70,18 L 85,15 Z" 
-                  />
-                  
-                  {/* Accurate City Markers based on TN Geography */}
-                  {[
-                    { cx: 90, cy: 15, label: "Chennai" },
-                    { cx: 18, cy: 58, label: "Coimbatore" },
-                    { cx: 22, cy: 68, label: "Pollachi" },
-                    { cx: 24, cy: 75, label: "Udumalpet" },
-                    { cx: 52, cy: 68, label: "Trichy" },
-                    { cx: 48, cy: 85, label: "Madurai" },
-                    { cx: 45, cy: 45, label: "Salem" },
-                    { cx: 35, cy: 50, label: "Erode" },
-                    { cx: 28, cy: 55, label: "Tiruppur" }
-                  ].map((city) => (
-                    <g key={city.label}>
-                      <circle cx={city.cx} cy={city.cy} r="1.5" className="fill-primary" />
-                      <circle cx={city.cx} cy={city.cy} r="3" className="fill-primary/20" />
-                      <text x={city.cx + 3} y={city.cy + 1} className="text-[3px] font-bold fill-muted-foreground hidden lg:block opacity-40">{city.label}</text>
-                    </g>
-                  ))}
-                </svg>
-                <div className="absolute bottom-10 right-10 text-right">
-                  <p className="text-[10px] font-black uppercase tracking-widest text-primary">Coverage reach</p>
-                  <p className="text-2xl font-black text-foreground">38 Districts</p>
+              <div className="float-card aspect-square flex items-center justify-center bg-mesh/50 overflow-hidden p-8 border-none shadow-2xl relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent z-10 pointer-events-none" />
+                
+                <TNMap className="w-full h-full relative z-20 transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_20px_50px_rgba(var(--primary-rgb),0.2)]" />
+
+                {/* Ambient Glows */}
+                <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/20 rounded-full blur-[80px] animate-pulse" />
+                <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-secondary/10 rounded-full blur-[80px] animate-pulse delay-700" />
+                
+                {/* Coverage Badge */}
+                <div className="absolute bottom-8 right-8 z-30 text-right pointer-events-none">
+                  <p className="text-[10px] font-black tracking-wide text-primary mb-1">Statewide coverage</p>
+                  <p className="text-3xl font-black text-foreground drop-shadow-sm">38 Districts</p>
                 </div>
               </div>
               {/* Decorative elements */}
@@ -319,11 +295,11 @@ const Home = () => {
                 )}
               >
                 {group.highlight && (
-                  <span className="mb-6 inline-flex self-start items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-[10px] font-black uppercase tracking-wider text-primary">
+                  <span className="mb-6 inline-flex self-start items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-[10px] font-black text-primary">
                     Recommended
                   </span>
                 )}
-                <h3 className="text-2xl font-black tracking-tight">{group.title}</h3>
+                <h3 className="text-2xl font-black">{group.title}</h3>
                 <div className="mt-8 flex-1 space-y-4">
                   {group.points.map((point) => (
                     <div key={point} className="flex items-start gap-4">
@@ -376,7 +352,7 @@ const Home = () => {
                     <h3 className="text-base font-black tracking-tight text-foreground transition-colors group-hover:text-primary">
                       {founder.name}
                     </h3>
-                    <p className="mt-2 text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground whitespace-normal">
+                    <p className="mt-2 text-[10px] font-black tracking-wide text-muted-foreground whitespace-normal">
                       {founder.role.split(',')[0]}
                     </p>
                   </div>

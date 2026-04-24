@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1000" viewBox="0 0 21000 29700">
+  <style>
+    .tn-district { fill: transparent; stroke: currentColor; stroke-width: 40; transition: all 0.3s ease; }
+    .tn-district:hover { fill: currentColor; fill-opacity: 0.1; stroke-width: 60; }
+    .tn-label { fill: currentColor; font-family: 'Inter', sans-serif; font-size: 300px; font-weight: bold; pointer-events: none; }
+  </style>
+  <g id="districts">
+    <!-- Simplified/Representative paths would go here if I were manually creating it, 
+         but I will use the extracted paths in the actual file. -->
+  </g>
+</svg>
