@@ -3,7 +3,7 @@ import { Calculator, CheckCircle2, ClipboardCheck, Route, Users } from "lucide-r
 import { Seo } from "@/components/seo/Seo";
 import { PageHero } from "@/components/site/PageHero";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { audienceBenefits, seoByPath } from "@/data/siteData";
+import { audienceBenefits, seoByPath, brandAssets } from "@/data/siteData";
 
 const pillars = [
   { title: "Lead generation", description: "Gain visibility with customers and district-level opportunities through a central brand presence.", icon: Users },
@@ -22,6 +22,12 @@ const Contractors = () => {
         eyebrow="For contractors"
         title="A stronger operating system for PVC contractors."
         description="Contractors sit at the center of customer trust, labour coordination, and project execution."
+        bentoItems={[
+          { image: brandAssets.bentoUpvcWindow, title: "Partnerships", description: "Stronger network." },
+          { image: brandAssets.bentoInstallation, title: "Execution", description: "Professional teams." },
+          { image: brandAssets.bentoPvcWall, title: "Materials", description: "Quality PVC." },
+          { image: brandAssets.bentoShowroom, title: "Growth", description: "More leads." }
+        ]}
       />
 
       <section className="section-padding">

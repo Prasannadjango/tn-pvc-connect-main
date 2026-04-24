@@ -3,7 +3,7 @@ import { Fingerprint, Headphones, Search, ShieldCheck } from "lucide-react";
 import { Seo } from "@/components/seo/Seo";
 import { PageHero, SectionIntro } from "@/components/site/PageHero";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { platformBenefits, seoByPath } from "@/data/siteData";
+import { platformBenefits, seoByPath, brandAssets } from "@/data/siteData";
 
 const focusAreas = [
   {
@@ -38,6 +38,12 @@ const Benefits = () => {
         eyebrow="Benefits"
         title="Designed for business growth and field trust."
         description="TN-PVC Interiors helps the PVC and UPVC trade move beyond informal coordination into an accountable ecosystem."
+        bentoItems={[
+          { image: brandAssets.heroInterior, title: "Quality Spaces", description: "Long-lasting value." },
+          { image: brandAssets.bentoShowroom, title: "Visibility", description: "Searchable network." },
+          { image: brandAssets.bentoInstallation, title: "Field Trust", description: "Accountable execution." },
+          { image: brandAssets.bentoUpvcWindow, title: "Growth", description: "Business expansion." }
+        ]}
       />
 
       <section className="section-padding">

@@ -3,7 +3,7 @@ import { BadgeIndianRupee, CheckCircle2, Fingerprint, HardHat, ShieldCheck } fro
 import { Seo } from "@/components/seo/Seo";
 import { PageHero } from "@/components/site/PageHero";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { audienceBenefits, seoByPath } from "@/data/siteData";
+import { audienceBenefits, seoByPath, brandAssets } from "@/data/siteData";
 
 const labourFeatures = [
   { title: "Payment visibility", description: "The platform vision supports clearer communication so labour teams are not left uncertain about rates.", icon: BadgeIndianRupee },
@@ -22,6 +22,12 @@ const Labour = () => {
         eyebrow="For labour"
         title="Respect, visibility, and structured work for labour teams."
         description="We aim to build a better environment for the workers who execute PVC and UPVC interiors on the ground."
+        bentoItems={[
+          { image: brandAssets.bentoInstallation, title: "On-site", description: "Clear execution." },
+          { image: brandAssets.bentoShowroom, title: "Teamwork", description: "Strong support." },
+          { image: brandAssets.bentoPvcWall, title: "Craftsmanship", description: "Expert builds." },
+          { image: brandAssets.heroInterior, title: "Results", description: "Quality finishes." }
+        ]}
       />
 
       <section className="section-padding">

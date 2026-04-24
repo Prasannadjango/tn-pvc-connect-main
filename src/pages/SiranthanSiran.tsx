@@ -3,7 +3,7 @@ import { ExternalLink, Mail, Phone } from "lucide-react";
 import { Seo } from "@/components/seo/Seo";
 import { PageHero } from "@/components/site/PageHero";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { founders, seoByPath } from "@/data/siteData";
+import { founders, seoByPath, brandAssets } from "@/data/siteData";
 
 const founder = founders.find((item) => item.slug === "siranthan-siran")!;
 
@@ -17,6 +17,12 @@ const SiranthanSiran = () => {
         eyebrow="Founder story"
         title="Siranthan Siran"
         description={founder.intro}
+        bentoItems={[
+          { image: brandAssets.bentoShowroom, title: "Dexaz Studio", description: "Digital growth." },
+          { image: brandAssets.heroInterior, title: "Vision", description: "Tech ecosystem." },
+          { image: brandAssets.bentoUpvcWindow, title: "AI-PVC", description: "Strategic partner." },
+          { image: brandAssets.bentoPvcWall, title: "TN-PVC", description: "State leader." }
+        ]}
         aside={
           <div className="float-card p-0 overflow-hidden">
             <img src={founder.image} alt={founder.name} className="aspect-[4/4.5] w-full object-cover" loading="eager" />

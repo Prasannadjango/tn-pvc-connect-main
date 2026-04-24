@@ -3,7 +3,7 @@ import { BadgeCheck, CheckCircle2, Home, Shield, Sparkles } from "lucide-react";
 import { Seo } from "@/components/seo/Seo";
 import { PageHero } from "@/components/site/PageHero";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { audienceBenefits, seoByPath } from "@/data/siteData";
+import { audienceBenefits, seoByPath, brandAssets } from "@/data/siteData";
 
 const clientFocus = [
   { title: "Verified connections", description: "Clients can approach a more visible professional network instead of scattered word-of-mouth referrals.", icon: BadgeCheck },
@@ -22,6 +22,12 @@ const Clients = () => {
         eyebrow="For clients"
         title="Find PVC interior professionals with confidence."
         description="TN-PVC Interiors is built so families and businesses can connect with a stronger ecosystem for dependable project delivery."
+        bentoItems={[
+          { image: brandAssets.heroInterior, title: "Dream Spaces", description: "Modern design." },
+          { image: brandAssets.bentoUpvcWindow, title: "Durability", description: "Long-lasting." },
+          { image: brandAssets.bentoPvcWall, title: "Finishes", description: "Premium textures." },
+          { image: brandAssets.bentoShowroom, title: "Inspiration", description: "Explore ideas." }
+        ]}
       />
 
       <section className="section-padding">

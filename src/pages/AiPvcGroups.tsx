@@ -15,6 +15,12 @@ const AiPvcGroups = () => {
         eyebrow="AI-PVC partnership"
         title="TN-PVC Interiors x AI-PVC Groups x Dexaz Groups"
         description="Bringing field experience, national PVC identity, and digital growth into one aligned platform."
+        bentoItems={[
+          { image: brandAssets.heroInterior, title: "AI-PVC", description: "National network." },
+          { image: brandAssets.bentoPvcWall, title: "Partnership", description: "Digital growth." },
+          { image: brandAssets.bentoUpvcWindow, title: "TN-PVC", description: "Statewide reach." },
+          { image: brandAssets.bentoShowroom, title: "Dexaz", description: "Tech ecosystem." }
+        ]}
         aside={
           <div className="grid gap-6 sm:grid-cols-2">
             <div className="float-card flex items-center justify-center p-8">

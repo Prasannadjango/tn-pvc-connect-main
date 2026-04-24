@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { Seo } from "@/components/seo/Seo";
 import { PageHero, SectionIntro } from "@/components/site/PageHero";
 import { SiteLayout } from "@/components/site/SiteLayout";
-import { seoByPath, geoCoverage, networkFlow } from "@/data/siteData";
+import { seoByPath, geoCoverage, networkFlow, brandAssets } from "@/data/siteData";
 
 const icons = [Factory, Truck, Building2, MapPin, Wrench];
 
@@ -18,6 +18,12 @@ const Network = () => {
         eyebrow="Network"
         title="A connected PVC ecosystem built for the way Tamil Nadu works."
         description="TN-PVC Interiors mirrors the full journey from manufacturing to on-site installation so every stakeholder knows their place."
+        bentoItems={[
+          { image: brandAssets.bentoPvcWall, title: "PVC Expertise", description: "Premium materials." },
+          { image: brandAssets.heroInterior, title: "Modern Interiors", description: "Transforming spaces." },
+          { image: brandAssets.bentoUpvcWindow, title: "UPVC Windows", description: "Durable design." },
+          { image: brandAssets.bentoInstallation, title: "Execution", description: "Professional work." }
+        ]}
         actions={[
           { label: "See benefits", to: "/benefits" },
           { label: "Contact leadership", to: "/anubrindha", secondary: true },

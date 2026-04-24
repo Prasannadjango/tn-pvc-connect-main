@@ -211,8 +211,36 @@ export const PageHero = ({
           ) : null}
         </div>
 
-        <div className="animate-reveal delay-3 lg:ml-auto">
-          {aside}
+        <div className="animate-reveal delay-3 lg:ml-auto w-full max-w-lg">
+          {bentoItems && bentoItems.length > 0 ? (
+            <div className="grid grid-cols-2 gap-3 w-full">
+              {bentoItems.map((item, idx) => (
+                <div 
+                  key={idx} 
+                  className={cn(
+                    "float-card group relative flex flex-col overflow-hidden p-0 transition-all hover:shadow-xl hover:-translate-y-1",
+                    item.className
+                  )}
+                >
+                  <div className="relative h-full w-full aspect-square">
+                    <img 
+                      src={item.image} 
+                      alt={item.title} 
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-4 flex flex-col justify-end text-left">
+                      <h3 className="text-sm font-black text-white leading-tight">{item.title}</h3>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : image ? (
+            <div className="relative overflow-hidden rounded-[2rem] border border-border/40 shadow-2xl">
+              <img src={image} alt="" className="w-full object-cover aspect-video" />
+            </div>
+          ) : null}
+          {aside && <div className="mt-6">{aside}</div>}
         </div>
       </div>
     </section>
