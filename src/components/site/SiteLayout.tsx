@@ -77,15 +77,12 @@ export const SiteLayout = ({ children }: SiteLayoutProps) => {
       {/* ─── Header ─── */}
       <header
         className={cn(
-          "fixed top-0 left-0 w-full z-50 h-20 transition-all duration-500",
-          scrolled
-            ? "p-4 "
-            : "p-4",
+          "fixed top-0 left-0 w-full z-50 h-20 transition-all duration-500 flex items-center p-4",
         )}
       >
         <div
           className={cn(
-            "container flex items-center justify-between transition-all duration-500 rounded-2xl border border-transparent p-4",
+            "container flex items-center justify-between transition-all duration-500 rounded-2xl border border-transparent",
             scrolled
               ? "bg-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.08)] backdrop-blur-xl border-border/50 py-3 px-3"
               : "bg-transparent py-0 px-0"
@@ -153,12 +150,12 @@ export const SiteLayout = ({ children }: SiteLayoutProps) => {
                 <Menu className="size-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[85vw] max-w-sm border-l border-border/40 bg-background p-0">
-              <SheetHeader className="border-b border-border/20 px-8 py-6 text-left">
+            <SheetContent side="right" className="w-[85vw] max-w-sm border-l border-border/40 bg-background p-0 flex flex-col">
+              <SheetHeader className="border-b border-border/20 px-8 py-6 text-left shrink-0">
                 <SheetTitle className="text-xl font-black tracking-tight">{siteName}</SheetTitle>
                 <SheetDescription className="text-xs font-medium text-muted-foreground">{siteTagline}</SheetDescription>
               </SheetHeader>
-              <div className="flex h-full flex-col justify-between p-8">
+              <div className="flex flex-1 flex-col justify-between p-8 overflow-y-auto">
                 <nav className="space-y-2" aria-label="Mobile navigation">
                   {navItems.map((item) => (
                     <SheetClose asChild key={item.path}>

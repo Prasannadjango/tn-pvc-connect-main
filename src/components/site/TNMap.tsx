@@ -55,12 +55,12 @@ const TNMap = ({ className }: { className?: string }) => {
           { name: "Tiruppur", x: 7734, y: -1110, align: "start" }
         ].map((city) => (
           <g key={city.name} className="group/city">
-            {/* Pulsating Radar Effect */}
+            {/* Soft Background Glow instead of Ping */}
             <circle 
               cx={city.x} 
               cy={city.y} 
               r="6" 
-              className="fill-primary/30 animate-ping" 
+              className="fill-primary/20" 
             />
             {/* Core Marker */}
             <circle 

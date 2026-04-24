@@ -260,9 +260,9 @@ const Home = () => {
                 <div className="absolute bottom-1/4 right-1/4 w-32 h-32 bg-secondary/10 rounded-full blur-[80px] animate-pulse delay-700" />
                 
                 {/* Coverage Badge */}
-                <div className="absolute bottom-8 right-8 z-30 text-right pointer-events-none">
+                <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 z-30 text-right pointer-events-none">
                   <p className="text-[10px] font-black tracking-wide text-primary mb-1">Statewide coverage</p>
-                  <p className="text-3xl font-black text-foreground drop-shadow-sm">38 Districts</p>
+                  <p className="text-xl md:text-3xl font-black text-foreground drop-shadow-sm">38 Districts</p>
                 </div>
               </div>
               {/* Decorative elements */}
