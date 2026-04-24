@@ -72,6 +72,14 @@ export const SiteLayout = ({ children }: SiteLayoutProps) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Scroll to top on route change
+  useEffect(() => {
+    // Ensure the scroll happens after React Router renders the new page
+    setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 10);
+  }, [location.pathname]);
+
   return (
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground selection:bg-primary/10 selection:text-primary">
       {/* ─── Header ─── */}
